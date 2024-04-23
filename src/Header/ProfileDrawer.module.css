@@ -1,0 +1,107 @@
+.content {
+  color: var(--color-secondary-500);
+  font-size: 1.2rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title > div {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
+.username {
+  font-size: 1rem;
+}
+
+.icon {
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 20%;
+}
+
+.icon:hover {
+  background-color: var(--color-gradient-600);
+}
+
+.theme_container {
+  position: relative;
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: .5rem;
+}
+
+.theme:hover {
+  background-color: var(--color-gradient-600);
+}
+
+.theme > div:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme_choice {
+  display: none;
+  background-color: var(--popup-background);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border-radius: .5rem;
+}
+
+.theme_choice.active {
+  display: block;
+}
+
+.theme_choice > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: .5rem;
+  padding: 0.5rem 0.5rem 0.5rem 3rem;
+}
+
+.theme_choice > div:hover {
+  background-color: var(--color-gradient-600);
+}
+
+.theme_checked {
+  position: absolute;
+  left: 1rem;
+}
+
+.mobile_personal_info {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.mobile_personal_info > div:not(:last-child) {
+  padding: .3rem 1rem;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--color-secondary-500);
+  color: var(--color-primary-500);
+}
+
+.mobile_personal_info > div span {
+  font-size: .8rem;
+}

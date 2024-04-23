@@ -1,0 +1,59 @@
+.logo {
+  height: 100%;
+}
+
+.logo_alt {
+  height: 50px;
+  width: 20%;
+}
+
+.logo > svg {
+  height: 100%;
+}
+
+.fill {
+  fill: var(--logo-color);
+}
+
+.stroke {
+  fill: none;
+  stroke: var(--logo-color);
+  stroke-miterlimit: 100;
+  stroke-width: 40
+}
+
+.logo_alt_c1 {
+  fill: none;
+  stroke: #d32f2f;
+  stroke-width: 10;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none
+}
+
+.logo_alt_c2 {
+  fill: #d32f2f;
+  fill-opacity: 1;
+  stroke: #d32f2f;
+  stroke-width: 10.2194;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none
+}
+
+.logo_alt_c3 {
+  fill: #d32f2f;
+  fill-opacity: 1;
+  stroke: #d32f2f;
+  stroke-width: 11.4649;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none
+}
+
+.logo_alt_c4 {
+  fill: none;
+  fill-opacity: 1;
+  stroke: #d32f2f;
+  stroke-width: 11.465;
+  stroke-miterlimit: 4;
+  stroke-dasharray: none;
+  stroke-opacity: 1
+}
