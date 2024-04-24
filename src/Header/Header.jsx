@@ -5,6 +5,7 @@ import ProfileDrawer from "./ProfileDrawer.jsx";
 import PropTypes from "prop-types";
 import {LogoutOutlined, MenuOutlined} from "@ant-design/icons";
 import {DeviceThemeContext} from "../store/device-theme-context.jsx";
+import {Tooltip} from "antd";
 
 const Header = ({otvoriProfil, setOtvoriProfil}) => {
   const prviLink = useRef();
@@ -14,6 +15,7 @@ const Header = ({otvoriProfil, setOtvoriProfil}) => {
 
   const {deviceType} = useContext(DeviceThemeContext);
   const mobile = deviceType === 'mobile';
+  const tablet = deviceType === 'tablet';
 
   useEffect(() => {
     setMarkerPosition(prviLink.current?.offsetLeft);
@@ -24,21 +26,16 @@ const Header = ({otvoriProfil, setOtvoriProfil}) => {
   }
 
   return (
-    <header className={`${classes.header} ${classes.mobile}`}>
+    <header className={`${classes.header} ${mobile ? classes.mobile : ''} ${tablet ? classes.tablet : ''}`}>
       <div className={classes.logo_and_org}>
         <Logo/>
-        {!mobile ? <div className={classes.org_and_modul}>
+        {!mobile && !tablet ? <div className={classes.org_and_modul}>
           <span>
-            KIS :: Univerzitetski klinički centar Republike Srpske :: MODUL
+            KIS :: Univerzitetski klinički centar Republike Srpske
           </span>
-          <div className={classes.clinic}>
-            <span>
-              1012 KLINIKA ZA KARDIOLOGIJU
-            </span>
-            <span>
-              10127 Odjeljenje opšte kardiologije sa funkcionalnom dijagnostikom i kardiološkim ambulantama
-            </span>
-          </div>
+          <span>
+            MODUL
+          </span>
         </div> : null}
       </div>
 
@@ -50,11 +47,32 @@ const Header = ({otvoriProfil, setOtvoriProfil}) => {
           <div ref={marker} style={{left: `${markerPosition}px`}} className={classes.marker}></div> : null}
       </nav> : null}
 
-      {mobile ?  <MenuOutlined onClick={() => setOtvoriProfil(true)} className={classes.mobile_menu}/>  :
+      {mobile || tablet ?
+        <div className={classes.profile}>
+          <MenuOutlined onClick={() => setOtvoriProfil(true)} className={classes.mobile_menu}/>
+        </div> :
         <div className={classes.profile}>
 
-          <div className={classes.user} onClick={() => setOtvoriProfil(true)}>Dejan Bajic</div>
-          <LogoutOutlined className={classes.logout} />
+          <div className={classes.user} onClick={() => setOtvoriProfil(true)}>
+            <span>Korisnik:</span>
+            Dejan Bajic
+          </div>
+
+          <Tooltip placement="bottom" title={'KLINIKA ZA KARDIOLOGIJU'}>
+            <div className={classes.user}>
+              <span>Klinika:</span>
+              1012
+            </div>
+          </Tooltip>
+
+          <Tooltip placement="bottom"
+                   title={'Odjeljenje opšte kardiologije sa funkcionalnom dijagnostikom i kardiološkim ambulantama'}>
+            <div className={classes.user}>
+              <span>Odjeljenje:</span>
+              10127
+            </div>
+          </Tooltip>
+          <LogoutOutlined className={classes.logout}/>
         </div>}
 
       <ProfileDrawer open={otvoriProfil} onClose={() => setOtvoriProfil(false)}/>

@@ -11,6 +11,10 @@
   justify-content: space-between;
 }
 
+.tablet .logo_and_org {
+  width: 20%;
+}
+
 .logo_and_org {
   color: var(--color-secondary-500);
   width: 40%;
@@ -25,8 +29,11 @@
   flex-direction: column;
 }
 
+.tablet .navigation {
+  width: 60%;
+}
+
 .navigation {
-  margin-left: 1rem;
   position: relative;
   display: flex;
   justify-content: center;
@@ -58,6 +65,10 @@
   filter: drop-shadow(0 5px 25px var(--color-gradient_alt-500));
 }
 
+.tablet .profile {
+  width: 20%;
+}
+
 .profile {
   height: 80%;
   width: 40%;
@@ -67,20 +78,14 @@
   gap: 2rem;
 }
 
-.clinic {
-  font-size: .7rem;
-  color: var(--color-secondary-500);
-  display: flex;
-  flex-direction: column;
-}
-
 .user {
   background-color: var(--logo-color);
   color: var(--color-primary-500);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: .3rem .8rem;
+  padding: .1rem .8rem;
   border-radius: .5rem;
   cursor: pointer;
 }
@@ -89,7 +94,17 @@
   background-color: var(--logo-color-hover);
 }
 
-.profile .logout {
+.user > span {
+  font-size: .8rem;
+}
+
+.clinic {
+  font-size: .7rem;
+  color: var(--color-secondary-500);
+  display: flex;
+}
+
+.logout {
   padding: .5rem;
   font-size: 24px;
   color: var(--color-secondary-500);
@@ -97,7 +112,7 @@
   border-radius: .5rem;
 }
 
-.profile .logout:hover {
+.logout:hover {
   background-color: var(--color-gradient-600);
 }
 

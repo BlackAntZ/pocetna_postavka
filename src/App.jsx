@@ -1,8 +1,8 @@
 import Header from "./Header/Header.jsx";
-import Intro from "./Intro/Intro.jsx";
 import {useState} from "react";
 import {DeviceThemeContext} from "./store/device-theme-context.jsx";
 import { deviceType } from 'react-device-detect';
+import IntroAlt from "./Intro/IntroAlt.jsx";
 
 function App() {
   const [tema, setTema] = useState("light");
@@ -16,7 +16,8 @@ function App() {
 
   return (
     <DeviceThemeContext.Provider value={{deviceType: deviceType, theme: tema, setTheme: setTheme}}>
-      <Intro/>
+      <IntroAlt/>
+      {/*<Intro />*/}
 
       <Header otvoriProfil={otvoriProfil} setOtvoriProfil={setOtvoriProfil}/>
 

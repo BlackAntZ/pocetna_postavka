@@ -10,7 +10,7 @@ const ProfileDrawer = ({open, onClose}) => {
   const odabirTeme = useRef();
 
   const { deviceType, theme, setTheme } = useContext(DeviceThemeContext);
-  const mobile = deviceType === "mobile";
+  const mobile = deviceType === "mobile" || deviceType === 'tablet';
 
   const otvoriZatvoriOdairTeme = () => {
     odabirTeme.current?.classList.toggle(classes.active);
