@@ -1,7 +1,7 @@
 .container {
   height: 100vh;
   width: 100%;
-  background-color: #07252d;
+  background-color: #0f1219;
   z-index: 1;
   position: fixed;
   left: 0;
@@ -16,8 +16,10 @@
 .text_container {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 5rem;
   position: absolute;
+  height: 50vh;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -31,10 +33,37 @@
 }
 
 .logo {
-  margin: 0;
-  padding: 0;
-  font-size: 6rem;
-  color: white;
+  height: 100%;
+}
+
+.fill {
+  fill: #08f9ff;
+  position: relative;
+  fill-opacity: 0;
+  transition: 1s fill-opacity;
+}
+
+.fill.appear {
+  fill-opacity: 1;
+}
+
+.stroke {
+  fill: none;
+  stroke: #08f9ff;
+  stroke-width: 40;
+  stroke-opacity: 0;
+  transition: 1s stroke-opacity;
+}
+
+.stroke1 {
+  stroke-dasharray: 730;
+  stroke-dashoffset: 730;
+  transition: .8s stroke-dashoffset;
+}
+
+.stroke.appear {
+  stroke-dashoffset: 0;
+  stroke-opacity: 1;
 }
 
 .logo_animation {
@@ -42,8 +71,12 @@
   margin: 0;
   padding: 0;
   font-size: 6rem;
-  color: #07252d;
-  -webkit-text-stroke: .2rem #0e3732;
+  color: #0f1219;
+  -webkit-text-stroke: .2rem rgba(255, 255, 255, 0.2);
+}
+
+.logo_animation_mobile {
+  font-size: 4rem;
 }
 
 .logo_animation:before {
@@ -55,7 +88,7 @@
   height: 100%;
   color: #08f9ff;
   -webkit-text-stroke: 0 #0e3732;
-  border-right: 2px solid #08f9ff;
+  border-right: 2px solid #0f1219;
   overflow: hidden;
   animation: animate 1s linear 1;
 }
@@ -63,9 +96,10 @@
 @keyframes animate {
   0%, 10% {
     width: 0;
+    border-right: 2px solid #08f9ff;
   }
   90%, 100% {
     width: 100%;
-    border-color: #07252d;
+    border-color: #0f1219;
   }
 }

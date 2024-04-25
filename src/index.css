@@ -20,7 +20,7 @@ html {
   --logo-color: #fff;
   --logo-color-hover: #d8d8d8;
 
-  --popup-background: rgba(255, 255, 255, 0.1);
+  --popup-background: rgba(0, 0, 0, 0.8);
   --popup-background_alt: rgba(0, 0, 0, 0.1);
 
   --box-shadow: -6px 0 16px 0 rgba(0, 0, 0, 0.28),-3px 0 6px -4px rgba(0, 0, 0, 0.32),-9px 0 28px 8px rgba(0, 0, 0, 0.25);
@@ -44,7 +44,6 @@ html {
   --logo-color: #a51d21;
   --logo-color-hover: #a83337;
 
-  --popup-background: rgba(0, 0, 0, 0.1);
 }
 
 [data-theme='dark'] {
@@ -63,7 +62,7 @@ html {
   --logo-color: #08f9ff;
   --logo-color-hover: #0ad5da;
 
-  --popup-background: rgba(255, 255, 255, 0.1);
+  --popup-background: rgba(0, 0, 0, 0.9);
 
   --box-shadow: -6px 0 16px 0 rgba(8, 249, 255, 0.38),-3px 0 6px -4px rgba(8, 249, 255, 0.42),-9px 0 28px 8px rgba(8, 249, 255, 0.35);
 }

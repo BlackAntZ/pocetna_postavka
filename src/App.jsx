@@ -1,27 +1,18 @@
 import Header from "./Header/Header.jsx";
-import {useState} from "react";
-import {DeviceThemeContext} from "./store/device-theme-context.jsx";
-import { deviceType } from 'react-device-detect';
-import IntroAlt from "./Intro/IntroAlt.jsx";
+import {DeviceSessionContext} from "./store/device-session-context.jsx";
+import {deviceType} from 'react-device-detect';
+import Intro from "./Intro/Intro.jsx";
+import {sesijaTestna} from "./util/konstante.js";
 
 function App() {
-  const [tema, setTema] = useState("light");
-
-  const [otvoriProfil, setOtvoriProfil] = useState(false);
-
-  const setTheme = theme => {
-    document.querySelector('body').setAttribute('data-theme', theme);
-    setTema(theme);
-  }
+  //podatke o sesiji u pravoj aplikaciji postaviti na stejt
 
   return (
-    <DeviceThemeContext.Provider value={{deviceType: deviceType, theme: tema, setTheme: setTheme}}>
-      <IntroAlt/>
-      {/*<Intro />*/}
+    <DeviceSessionContext.Provider value={{deviceType: deviceType, session: sesijaTestna}}>
+      <Intro/>
 
-      <Header otvoriProfil={otvoriProfil} setOtvoriProfil={setOtvoriProfil}/>
-
-    </DeviceThemeContext.Provider>
+      <Header/>
+    </DeviceSessionContext.Provider>
   )
 }
 

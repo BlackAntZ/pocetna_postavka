@@ -90,7 +90,7 @@
   gap: .5rem;
 }
 
-.mobile_personal_info > div:not(:last-child) {
+.mobile_personal_info > div:not(:first-of-type) {
   padding: .3rem 1rem;
   border-radius: .5rem;
   display: flex;
