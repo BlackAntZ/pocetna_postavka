@@ -31,7 +31,7 @@ const ProfileDrawer = ({open, onClose}) => {
 
           <Divider/>
 
-          <OdabirTeme/>
+          <OdabirTeme drawerOpen={open} />
 
           <MobileDrawerProfile/>
 

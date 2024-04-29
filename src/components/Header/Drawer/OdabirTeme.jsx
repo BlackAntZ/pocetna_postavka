@@ -1,43 +1,46 @@
 import classes from "./ProfileDrawer.module.css";
 import {CheckOutlined, MoonFilled, RightOutlined, SunFilled} from "@ant-design/icons";
-import {useRef} from "react";
+import {useState} from "react";
+import useComponentVisible from "./useComponentVisible.jsx";
+import PropTypes from "prop-types";
 
-const OdabirTeme = () => {
-  const odabirTeme = useRef();
-
-  const temaTrenutna = document.querySelector('body').getAttribute('data-theme') || 'light';
-
-  const otvoriZatvoriOdairTeme = () => {
-    odabirTeme.current?.classList.toggle(classes.active);
-  }
+const OdabirTeme = ({drawerOpen}) => {
+  const { ref, isComponentVisible, setIsComponentVisible } =
+    useComponentVisible(drawerOpen);
+  const [tema, setTema] = useState(document.querySelector('body').getAttribute('data-theme') || 'light');
 
   const podesiTemu = tema => {
+    setTema(tema);
     document.querySelector('body').setAttribute('data-theme', tema);
-    otvoriZatvoriOdairTeme();
+    setIsComponentVisible(false);
   }
 
   return (
-    <div className={classes.theme_container}>
-      <div className={classes.theme} onClick={otvoriZatvoriOdairTeme}>
+    <div ref={ref} className={classes.theme_container} id={'odabir_teme'}>
+      <div className={classes.theme} onClick={() => setIsComponentVisible(prevState => !prevState)}>
         <div>
-          {temaTrenutna === 'dark' ? <MoonFilled/> : <SunFilled/>}
-          Tema: {temaTrenutna === 'light' ? 'Svijetla' : temaTrenutna === 'dark' ? 'Tamna' : 'Svijetla 2'}
+          {tema === 'dark' ? <MoonFilled/> : <SunFilled/>}
+          Tema: {tema === 'light' ? 'Svijetla' : tema === 'dark' ? 'Tamna' : 'Svijetla 2'}
         </div>
         <RightOutlined/>
       </div>
-      <div ref={odabirTeme} className={classes.theme_choice}>
-        <div onClick={() => podesiTemu('light')}>{temaTrenutna === 'light' ?
+        <div ref={ref} className={`${classes.theme_choice} ${isComponentVisible ? classes.active : ''}`}>
+        <div onClick={() => podesiTemu('light')}>{tema === 'light' ?
           <CheckOutlined className={classes.theme_checked}/> : null}Svijetla 1
         </div>
-        <div onClick={() => podesiTemu('light_alt')}>{temaTrenutna === 'light_alt' ?
+        <div onClick={() => podesiTemu('light_alt')}>{tema === 'light_alt' ?
           <CheckOutlined className={classes.theme_checked}/> : null}Svijetla 2
         </div>
-        <div onClick={() => podesiTemu('dark')}>{temaTrenutna === 'dark' ?
+        <div onClick={() => podesiTemu('dark')}>{tema === 'dark' ?
           <CheckOutlined className={classes.theme_checked}/> : null}Tamna
         </div>
       </div>
     </div>
   );
 };
+
+OdabirTeme.propTypes = {
+  drawerOpen: PropTypes.bool.isRequired,
+}
 
 export default OdabirTeme;
