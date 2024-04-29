@@ -1,12 +1,12 @@
 import {ConfigProvider, Divider, Drawer} from 'antd';
 import classes from "./ProfileDrawer.module.css";
 import {CloseCircleOutlined} from '@ant-design/icons';
-import {tema} from "../../util/konstante.js";
+import {tema} from "../../../util/konstante.js";
 import PropTypes from "prop-types";
 import MobileDrawerProfile from "./MobileDrawerProfile.jsx";
 import OdabirTeme from "./OdabirTeme.jsx";
 import {useContext} from "react";
-import {DeviceSessionContext} from "../../store/device-session-context.jsx";
+import {DeviceSessionContext} from "../../../store/device-session-context.jsx";
 
 const ProfileDrawer = ({open, onClose}) => {
   const {session} = useContext(DeviceSessionContext);

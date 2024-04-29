@@ -2,9 +2,9 @@ import classes from "./Header.module.css";
 import {LogoutOutlined, MenuOutlined} from "@ant-design/icons";
 import {Tooltip} from "antd";
 import {useContext} from "react";
-import {DeviceSessionContext} from "../store/device-session-context.jsx";
+import {DeviceSessionContext} from "../../store/device-session-context.jsx";
 import PropTypes from "prop-types";
-import {pocetnaStranicaUrl} from "../util/konstante.js";
+import {pocetnaStranicaUrl} from "../../util/konstante.js";
 
 const UserQuit = ({setOtvoriProfil}) => {
   const {deviceType, session} = useContext(DeviceSessionContext);

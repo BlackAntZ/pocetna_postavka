@@ -1,17 +1,29 @@
-import Header from "./Header/Header.jsx";
 import {DeviceSessionContext} from "./store/device-session-context.jsx";
 import {deviceType} from 'react-device-detect';
-import Intro from "./Intro/Intro.jsx";
 import {sesijaTestna} from "./util/konstante.js";
+import {RouterProvider, createBrowserRouter} from 'react-router-dom';
+import HomePage from "./pages/HomePage.jsx";
+import Root from "./pages/Root.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
+import ContactPage from "./pages/ContactPage.jsx";
+import Intro from "./components/Intro/Intro.jsx";
+
+const router = createBrowserRouter([
+  {path: "/", element: <Root />, children: [
+    {index: true, element: <HomePage />},
+    {path: 'about', element: <AboutPage />},
+    {path: 'contact', element: <ContactPage />},
+    ]},
+])
 
 function App() {
-  //podatke o sesiji u pravoj aplikaciji postaviti na stejt
+  //podatke o sesiji u pravoj aplikaciji postaviti u stejt
 
   return (
     <DeviceSessionContext.Provider value={{deviceType: deviceType, session: sesijaTestna}}>
-      <Intro/>
+      <Intro />
 
-      <Header/>
+      <RouterProvider router={router} />
     </DeviceSessionContext.Provider>
   )
 }

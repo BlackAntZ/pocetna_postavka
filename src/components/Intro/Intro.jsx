@@ -1,6 +1,6 @@
 import {useContext, useEffect} from 'react';
 import classes from "./Intro.module.css";
-import {DeviceSessionContext} from "../store/device-session-context.jsx";
+import {DeviceSessionContext} from "../../store/device-session-context.jsx";
 
 const Intro = () => {
   const {deviceType} = useContext(DeviceSessionContext);

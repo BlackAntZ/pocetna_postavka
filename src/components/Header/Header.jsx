@@ -1,7 +1,7 @@
 import {useContext, useState} from 'react';
 import classes from "./Header.module.css";
 import ProfileDrawer from "./Drawer/ProfileDrawer.jsx";
-import {DeviceSessionContext} from "../store/device-session-context.jsx";
+import {DeviceSessionContext} from "../../store/device-session-context.jsx";
 import LogoOrg from "./Logo&Org.jsx";
 import NavigationLinks from "./NavigationLinks.jsx";
 import UserQuit from "./User&Quit.jsx";

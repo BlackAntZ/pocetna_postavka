@@ -1,8 +1,8 @@
 import classes from "./Header.module.css";
 import Logo from "./Logo/Logo.jsx";
 import {useContext} from "react";
-import {DeviceSessionContext} from "../store/device-session-context.jsx";
-import {modul} from "../util/konstante.js";
+import {DeviceSessionContext} from "../../store/device-session-context.jsx";
+import {modul} from "../../util/konstante.js";
 
 const LogoOrg = () => {
   const {deviceType, session} = useContext(DeviceSessionContext);

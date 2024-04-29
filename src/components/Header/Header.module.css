@@ -45,6 +45,7 @@
 }
 
 .navigation a {
+  all: unset;
   height: 100%;
   display: flex;
   align-items: center;

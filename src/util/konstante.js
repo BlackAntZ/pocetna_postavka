@@ -2,6 +2,12 @@ export const modul = 'Početna postavka';
 
 export const pocetnaStranicaUrl = '../hello.cfm';
 
+export const rute = [
+  {lokacija: '/', tekst: 'Početna'},
+  {lokacija: '/about', tekst: 'O nama'},
+  {lokacija: '/contact', tekst: 'Kontakt'}
+]
+
 export const tema = {
   token: {
     colorBgElevated: 'var(--color-primary-500)',
