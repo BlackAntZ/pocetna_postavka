@@ -1,5 +1,5 @@
 .content {
-  color: var(--color-secondary-500);
+  color: var(--header-text);
   font-size: 1.2rem;
 }
 
@@ -26,7 +26,7 @@
 }
 
 .icon:hover {
-  background-color: var(--color-gradient-600);
+  background-color: var(--button-hover-highlight);
 }
 
 .theme_container {
@@ -43,7 +43,7 @@
 }
 
 .theme:hover {
-  background-color: var(--color-gradient-600);
+  background-color: var(--button-hover-highlight);
 }
 
 .theme > div:first-of-type {
@@ -54,7 +54,7 @@
 
 .theme_choice {
   display: none;
-  background-color: var(--popup-background);
+  background-color: var(--transparent-popup-background);
   position: absolute;
   top: 100%;
   left: 0;
@@ -76,7 +76,7 @@
 }
 
 .theme_choice > div:hover {
-  background-color: var(--color-gradient-600);
+  background-color: var(--button-hover-highlight);
 }
 
 .theme_checked {
@@ -98,10 +98,29 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-  background-color: var(--color-secondary-500);
-  color: var(--color-primary-500);
+  background-color: var(--header-text);
+  color: var(--header-background);
 }
 
 .mobile_personal_info > div span {
   font-size: .8rem;
+}
+
+.mobile_navigation {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.mobile_navigation > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: .5rem;
+}
+
+.mobile_navigation > div:hover {
+  background-color: var(--button-hover-highlight);
 }

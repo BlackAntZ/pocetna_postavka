@@ -5,6 +5,7 @@ import {DeviceSessionContext} from "../../store/device-session-context.jsx";
 import LogoOrg from "./Logo&Org.jsx";
 import NavigationLinks from "./NavigationLinks.jsx";
 import UserQuit from "./User&Quit.jsx";
+import {navigation} from "../../util/konstante.jsx";
 
 const Header = () => {
   const [otvoriProfil, setOtvoriProfil] = useState(false);
@@ -17,7 +18,7 @@ const Header = () => {
     <header className={`${classes.header} ${mobile ? classes.mobile : ''} ${tablet ? classes.tablet : ''}`}>
       <LogoOrg />
 
-      <NavigationLinks />
+      {navigation === 'top' && !mobile ? <NavigationLinks/> : null}
 
       <UserQuit setOtvoriProfil={setOtvoriProfil} />
 

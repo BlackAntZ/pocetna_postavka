@@ -1,9 +1,9 @@
 .header {
-  background-color: var(--color-primary-500);
+  background-color: var(--header-background);
   height: 55px;
   display: flex;
   align-items: center;
-  padding-inline: 1rem;
+  padding-right: 1rem;
   box-shadow: 0 -6px 10px 5px var(--header-shadow);
 }
 
@@ -16,7 +16,7 @@
 }
 
 .logo_and_org {
-  color: var(--color-secondary-500);
+  color: var(--header-text);
   width: 40%;
   height: 80%;
   display: flex;
@@ -39,7 +39,7 @@
   justify-content: center;
   gap: 1rem;
   font-family: var(--main-font), serif;
-  color: var(--color-secondary-500);
+  color: var(--header-text);
   height: 100%;
   width: 20%;
 }
@@ -59,11 +59,11 @@
   bottom: 0;
   width: 5rem;
   height: 100%;
-  border-bottom: 5px solid var(--color-gradient-500);
-  background: linear-gradient(0deg, var(--color-gradient-600), transparent);
+  border-bottom: 5px solid var(--top-nav-marker);
+  background: linear-gradient(0deg, var(--button-hover-highlight), transparent);
   transition: left .5s;
   pointer-events: none;
-  filter: drop-shadow(0 5px 25px var(--color-gradient_alt-500));
+  filter: drop-shadow(0 5px 25px var(--top-nav-market-highlight));
 }
 
 .tablet .profile {
@@ -79,9 +79,13 @@
   gap: 2rem;
 }
 
+.profile__alt {
+  width: 60%;
+}
+
 .user {
   background-color: var(--logo-color);
-  color: var(--color-primary-500);
+  color: var(--header-background);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -101,23 +105,43 @@
 
 .clinic {
   font-size: .7rem;
-  color: var(--color-secondary-500);
+  color: var(--header-text);
   display: flex;
 }
 
 .logout {
   padding: .5rem;
   font-size: 24px;
-  color: var(--color-secondary-500);
+  color: var(--header-text);
   cursor: pointer;
   border-radius: .5rem;
 }
 
 .logout:hover {
-  background-color: var(--color-gradient-600);
+  background-color: var(--button-hover-highlight);
 }
 
 .mobile_menu {
-  color: var(--color-secondary-500);
+  color: var(--header-text);
   font-size: 40px;
+}
+
+.side_menu_container {
+  position: fixed;
+  left: 0;
+  top: 55px;
+  width: 60px;
+  height: calc(100vh - 55px);
+  box-shadow: 5px 0 5px -5px var(--header-shadow);
+  transition: width 0.5s ease-in-out;
+}
+
+.side_menu_container_expanded {
+  width: 250px;
+  /*box-shadow: 10px 0 10px -10px var(--header-shadow);*/
+}
+
+.side_menu {
+  background-color: var(--header-background);
+  height: 100%;
 }

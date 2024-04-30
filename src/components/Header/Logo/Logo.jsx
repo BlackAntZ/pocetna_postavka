@@ -1,8 +1,19 @@
 import classes from "./Logo.module.css";
+import {useContext} from "react";
+import {DeviceSessionContext} from "../../../store/device-session-context.jsx";
+import {navigation} from "../../../util/konstante.jsx";
+import {useNavigate} from "react-router-dom";
+import {SideMenuContext} from "../../../store/side-menu-context.js";
 
 const Logo = () => {
+  const {deviceType} = useContext(DeviceSessionContext);
+  const mobile = deviceType === "mobile" || deviceType === "tablet";
+
+  const {postaviMini} = useContext(SideMenuContext);
+
+  const navigate = useNavigate();
   return (
-    <div className={classes.logo}>
+    <div className={classes.logo} onClick={mobile || navigation === 'top' ? () => navigate('/') : () => postaviMini(prevState => !prevState)}>
       <svg viewBox="0 0 1080 986">
         <path id="Shape 1" className={classes.fill} d="m403 72.9h274v841h-274z"/>
         <path id="Shape 3" className={classes.fill}

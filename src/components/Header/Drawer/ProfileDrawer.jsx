@@ -1,16 +1,19 @@
 import {ConfigProvider, Divider, Drawer} from 'antd';
 import classes from "./ProfileDrawer.module.css";
 import {CloseCircleOutlined} from '@ant-design/icons';
-import {tema} from "../../../util/konstante.js";
+import {tema} from "../../../util/konstante.jsx";
 import PropTypes from "prop-types";
 import MobileDrawerProfile from "./MobileDrawerProfile.jsx";
 import OdabirTeme from "./OdabirTeme.jsx";
 import {useContext} from "react";
 import {DeviceSessionContext} from "../../../store/device-session-context.jsx";
+import MobileNavigation from "./MobileNavigation.jsx";
 
 const ProfileDrawer = ({open, onClose}) => {
   const {session} = useContext(DeviceSessionContext);
 
+  const {deviceType} = useContext(DeviceSessionContext);
+  const mobile = deviceType === "mobile" || deviceType === "tablet";
 
   const title = <div>
     <span>
@@ -30,6 +33,8 @@ const ProfileDrawer = ({open, onClose}) => {
           </div>
 
           <Divider/>
+
+          {mobile ? <MobileNavigation/> : null}
 
           <OdabirTeme drawerOpen={open} />
 

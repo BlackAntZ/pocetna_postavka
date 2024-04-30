@@ -4,7 +4,7 @@ import {Tooltip} from "antd";
 import {useContext} from "react";
 import {DeviceSessionContext} from "../../store/device-session-context.jsx";
 import PropTypes from "prop-types";
-import {pocetnaStranicaUrl} from "../../util/konstante.js";
+import {navigation, pocetnaStranicaUrl} from "../../util/konstante.jsx";
 
 const UserQuit = ({setOtvoriProfil}) => {
   const {deviceType, session} = useContext(DeviceSessionContext);
@@ -16,7 +16,7 @@ const UserQuit = ({setOtvoriProfil}) => {
         <div className={classes.profile}>
           <MenuOutlined onClick={() => setOtvoriProfil(true)} className={classes.mobile_menu}/>
         </div> :
-        <div className={classes.profile}>
+        <div className={`${classes.profile} ${navigation === 'side' ? classes.profile__alt : ''}`}>
 
           <div className={classes.user} onClick={() => setOtvoriProfil(true)}>
             <span>Korisnik:</span>

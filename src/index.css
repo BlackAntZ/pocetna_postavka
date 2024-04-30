@@ -5,39 +5,37 @@
 }
 
 html {
-  --color-background: #fff;
-  --color-primary-500: #d9234c;
+  --body-background: #fff;
 
-  --color-secondary-500: #fff;
-
-  --color-gradient-500: #fff;
-  --color-gradient-600: rgba(255, 255, 255, 0.2);
-
-  --color-gradient_alt-500: #000;
-
+  --header-background: #d9234c;
+  --header-text: #fff;
   --header-shadow : #000;
+
+  --top-nav-marker: #fff;
+  --top-nav-market-highlight: #000;
+
+  --button-hover-highlight: rgba(255, 255, 255, 0.2);
 
   --logo-color: #fff;
   --logo-color-hover: #d8d8d8;
 
-  --popup-background: rgba(0, 0, 0, 0.8);
-  --popup-background_alt: rgba(0, 0, 0, 0.1);
+  --transparent-popup-background: rgba(0, 0, 0, 0.8);
 
-  --box-shadow: -6px 0 16px 0 rgba(0, 0, 0, 0.28),-3px 0 6px -4px rgba(0, 0, 0, 0.32),-9px 0 28px 8px rgba(0, 0, 0, 0.25);
+  --drawer-box-shadow: -6px 0 16px 0 rgba(0, 0, 0, 0.28),-3px 0 6px -4px rgba(0, 0, 0, 0.32),-9px 0 28px 8px rgba(0, 0, 0, 0.25);
 
   --main-font: "Myriad Pro", serif;
 }
 
 [data-theme='light_alt'] {
-  --color-background: #d9234c;
-  --color-primary-500: #fff;
+  --body-background: #d9234c;
+  --header-background: #fff;
 
-  --color-secondary-500: #d9234c;
+  --header-text: #d9234c;
 
-  --color-gradient-500: #d9234c;
-  --color-gradient-600: rgba(136, 22, 47, 0.13);
+  --top-nav-marker: #d9234c;
+  --button-hover-highlight: rgba(136, 22, 47, 0.13);
 
-  --color-gradient_alt-500: #fff;
+  --top-nav-market-highlight: #fff;
 
   --header-shadow : #000;
 
@@ -47,32 +45,43 @@ html {
 }
 
 [data-theme='dark'] {
-  --color-background: #0f1219;
-  --color-primary-500: #1e232f;
+  --body-background: #0f1219;
+  --header-background: #1e232f;
 
-  --color-secondary-500: #fff;
+  --header-text: #fff;
 
-  --color-gradient-500: #08f9ff;
-  --color-gradient-600: #08f9ff33;
+  --top-nav-marker: #08f9ff;
+  --button-hover-highlight: #08f9ff33;
 
-  --color-gradient_alt-500: #08f9ff;
+  --top-nav-market-highlight: #08f9ff;
 
   --header-shadow : #08f9ff;
 
   --logo-color: #08f9ff;
   --logo-color-hover: #0ad5da;
 
-  --popup-background: rgba(0, 0, 0, 0.9);
+  --transparent-popup-background: rgba(0, 0, 0, 0.9);
 
-  --box-shadow: -6px 0 16px 0 rgba(8, 249, 255, 0.38),-3px 0 6px -4px rgba(8, 249, 255, 0.42),-9px 0 28px 8px rgba(8, 249, 255, 0.35);
+  --drawer-box-shadow: -6px 0 16px 0 rgba(8, 249, 255, 0.38),-3px 0 6px -4px rgba(8, 249, 255, 0.42),-9px 0 28px 8px rgba(8, 249, 255, 0.35);
 }
 
 body {
   padding: 0;
   margin: 0;
-  background-color: var(--color-background);
+  background-color: var(--body-background);
+  overflow: hidden;
 }
 
 .ant-drawer-content-wrapper {
-  box-shadow: var(--box-shadow) !important;
+  box-shadow: var(--drawer-box-shadow) !important;
+}
+
+.ant-menu-root {
+  padding-top: 1rem;
+  width: 100%;
+  border: none !important;
+}
+
+.ant-menu-submenu-selected > div {
+  background-color: var(--header-text);
 }
