@@ -86,6 +86,6 @@ body {
   background-color: var(--header-text);
 }
 
-.ant-menu-item-icon {
-  transition: none !important;
+.ant-menu-submenu-selected > div:hover {
+  background-color: var(--header-text) !important;
 }
