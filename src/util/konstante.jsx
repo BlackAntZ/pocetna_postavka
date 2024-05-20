@@ -7,13 +7,21 @@ import {
   MailOutlined
 } from "@ant-design/icons";
 
-export const modul = 'Početna postavka';
+//test || production
+// export const okruzenje = 'production';
+// export const testniUrl = '...';
+// export const productionUrl = '...';
+
+export const modul = 'Testna postavka';
 
 //side || top
 export const navigation = 'side';
 
+export const odabirKlinike = false;
+export const odabirOdjela = false;
+
 //lokacija na koju se vracamo kad izlazimo iz aplikacije
-export const pocetnaStranicaUrl = '../hello.cfm';
+export const pocetnaStranicaUrl = '...';
 
 //ako koristimo top navigaciju - za manje module
 export const rute = [

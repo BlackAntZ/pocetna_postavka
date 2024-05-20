@@ -4,7 +4,7 @@ import {Tooltip} from "antd";
 import {useContext} from "react";
 import {DeviceSessionContext} from "../../store/device-session-context.jsx";
 import PropTypes from "prop-types";
-import {navigation, pocetnaStranicaUrl} from "../../util/konstante.jsx";
+import {navigation, odabirKlinike, odabirOdjela, pocetnaStranicaUrl} from "../../util/konstante.jsx";
 
 const UserQuit = ({setOtvoriProfil}) => {
   const {deviceType, session} = useContext(DeviceSessionContext);
@@ -23,20 +23,21 @@ const UserQuit = ({setOtvoriProfil}) => {
             {session.ime_korisnika}
           </div>
 
-          <Tooltip placement="bottom" title={session.organizacija_naziv}>
+          {odabirKlinike ? <Tooltip placement="bottom" title={session.organizacija_naziv}>
             <div className={classes.user}>
               <span>Klinika:</span>
               {session.organizacija_sifra}
             </div>
-          </Tooltip>
+          </Tooltip> : null}
 
-          <Tooltip placement="bottom"
-                   title={session.organizacija_odjel_naziv}>
+          {odabirOdjela ? <Tooltip placement="bottom"
+                                   title={session.organizacija_odjel_naziv}>
             <div className={classes.user}>
               <span>Odjeljenje:</span>
               {session.organizacija_odjel}
             </div>
-          </Tooltip>
+          </Tooltip> : null}
+
           <LogoutOutlined onClick={() => window.location = pocetnaStranicaUrl} className={classes.logout}/>
         </div>}
     </>
