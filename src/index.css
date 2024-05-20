@@ -83,9 +83,9 @@ body {
 }
 
 .ant-menu-submenu-selected > div {
-  background-color: var(--header-text);
+  color: var(--header-shadow) !important;
 }
 
-.ant-menu-submenu-selected > div:hover {
-  background-color: var(--header-text) !important;
+.ant-menu-item-icon {
+  transition: none !important;
 }
