@@ -1,53 +1,5 @@
 import dayjs from "dayjs";
 
-const pomocni_objekat = {
-  datum_otpisa: '',
-  broj: '',
-  kolicina: '',
-  jedinica_mjere_naziv: '',
-  konto_id: '',
-  konto_naziv: '',
-  naziv: '',
-  konto_sifra: '',
-  konto_ime: '',
-  sifra: '',
-  organizaciona_jedinica_id: '',
-  jedinica_mjere_id: '',
-  godine_trajanja: '',
-  datum_zaduzenja: '',
-  procijenjena_nabavna_vrijednost: '',
-  sadasnja_vrijednost: '',
-  nabavna_vrijednost: '',
-  ukupna_amortizacija: '',
-  datum_nabavke: '',
-  zadnji_broj: '',
-  greska: '',
-  poruka: '',
-  osnovno_sredstvo: '',
-  stopa: '',
-  promet: '',
-  id_obracuna: '',
-  datum_od: '',
-  datum_do: '',
-  istorija: '',
-  datum_otpisa_format: '',
-  datum_nabavke_format: '',
-  timestamp_format: '',
-  datum_od_format: '',
-  datum_do_format: '',
-  novi_promet: '',
-  statistika: '',
-  sva_sredstva: '',
-  ukupna_ispravka: '',
-  vrijednost: '',
-  ispravka_vrijednosti: '',
-  obracun_id: '',
-  obracun: '',
-  ukupna_nova_sadasnja_vrijednost: '',
-  ukupna_nova_akumulirana_ispravka_vrijednosti: '',
-  prenosnice: ''
-}
-
 export const sesijaTestna = {
   cfid: "69050",
   cftoken: "E3C30397-3764-4DD2-A65264D21C7A3F6B",
@@ -93,36 +45,4 @@ export const sesijaTestna = {
   izis_ustanova_grad: "Banja Luka",
   izis_ustanova_ptt_broj: "78000",
   izis_ustanova_drzava: "BA"
-}
-
-export const sredstvoDefault = {
-  broj: "",
-  naziv: "",
-  organizaciona_jedinica_id: "",
-  konto_id: "",
-  jedinica_mjere_id: 1,
-  kolicina: "1",
-  datum_nabavke: "",
-  datum_zaduzenja: "",
-  inventarski_broj: "",
-  procijenjena_nabavna_vrijednost: "",
-  nabavna_vrijednost: "",
-  pocetna_poreska_nabavna_vrijednsost: "",
-  godine_trajanja: "",
-  amortizaciona_stopa: "",
-  poreska_amortizaciona_grupa: "",
-  poreska_amortizaciona_stopa: "",
-  dobavljac_id: "",
-  lokacija_id: ""
-}
-
-let danas = dayjs();
-const mjeseci = ['Jan', 'Feb', 'Mar', 'Apr', 'Maj', 'Jun', 'Jul', 'Aug', 'Sep', 'Okt', 'Nov', 'Dec'];
-export const godineMjeseci = [];
-
-for (let i = 0; i < 120; i++) {
-  const trenutniDatum = danas.subtract(i, 'M');
-  let trenutnaGodinaIndex = godineMjeseci.findIndex(godina => godina.value === trenutniDatum.year());
-  if (trenutnaGodinaIndex === -1) trenutnaGodinaIndex = godineMjeseci.push({value: trenutniDatum.year(), text: trenutniDatum.year(), children: []}) - 1;
-  godineMjeseci[trenutnaGodinaIndex].children.push({value: trenutniDatum.format('YYYY-MM'), text: mjeseci[trenutniDatum.month()]});
 }

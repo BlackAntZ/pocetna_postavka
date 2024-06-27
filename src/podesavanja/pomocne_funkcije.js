@@ -1,6 +1,8 @@
 import {okruzenje, productionUrl, testniUrl} from "./razvojno_okruzenje.js";
 import dayjs from "dayjs";
-import {formatDatum, formatDatumiVrijeme} from "../components/Sredstva/podesavanja.jsx";
+export const formatDatum = 'DD.MM.YYYY';
+export const formatDatumiVrijeme = 'DD.MM.YYYY HH:mm';
+export const vrijemeFormatZaBazu = 'YYYY-MM-DD';
 
 export const postaviSifrarnik = async (method, setSifrarnik, kljuc) => {
   const odgovor = await povuciPodatke(method);

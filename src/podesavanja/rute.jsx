@@ -10,7 +10,7 @@ import {
 //ako koristimo top navigaciju - za manje module
 export const rute = [
   {id: '/', lokacija: '/', tekst: 'Početna', icon: <HomeOutlined />},
-  {id: '/sredstva', lokacija: '/sredstva', tekst: 'O nama', icon: <InfoCircleOutlined />},
+  {id: '/about', lokacija: '/about', tekst: 'O nama', icon: <InfoCircleOutlined />},
   {id: '/contact', lokacija: '/contact', tekst: 'Kontakt', icon: <ContactsOutlined />}
 ]
 
@@ -23,14 +23,14 @@ export const sideMeniPostavka = [
     label: 'Početna',
   },
   {
-    key: '/sredstva',
-    icon: <NavLink to={'/sredstva'}><DatabaseOutlined /></NavLink>,
-    label: 'Osnovna sredstva',
+    key: '/about',
+    icon: <NavLink to={'/about'}><DatabaseOutlined /></NavLink>,
+    label: 'O nama',
   },
   {
-    key: '/obracuni',
-    icon: <NavLink to={'/obracuni'}><BarChartOutlined /></NavLink>,
-    label: 'Obračuni',
+    key: '/contact',
+    icon: <NavLink to={'/contact'}><BarChartOutlined /></NavLink>,
+    label: 'Kontakt',
   },
   {
     key: 'sub1',
