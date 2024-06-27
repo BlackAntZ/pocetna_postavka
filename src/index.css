@@ -7,7 +7,7 @@
 html {
   --body-background: #fff;
 
-  --header-background: #d9234c;
+  --header-background: rgba(50, 88, 123, 255);
   --header-text: #fff;
   --header-shadow : #000;
 

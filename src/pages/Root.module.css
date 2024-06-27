@@ -1,3 +1,5 @@
 .root {
-  padding-left: 60px;
+  margin-left: 60px;
+  height: calc(100vh - 55px);
+  padding: .5rem;
 }
