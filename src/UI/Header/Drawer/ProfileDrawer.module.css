@@ -1,0 +1,126 @@
+.content {
+  color: var(--header-text);
+  font-size: 1.2rem;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title > div {
+  display: flex;
+  align-items: center;
+  gap: .3rem;
+}
+
+.username {
+  font-size: 1rem;
+}
+
+.icon {
+  font-size: 2rem;
+  padding: 0.5rem;
+  border-radius: 20%;
+}
+
+.icon:hover {
+  background-color: var(--button-hover-highlight);
+}
+
+.theme_container {
+  position: relative;
+}
+
+.theme {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: .5rem;
+}
+
+.theme:hover {
+  background-color: var(--button-hover-highlight);
+}
+
+.theme > div:first-of-type {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme_choice {
+  display: none;
+  background-color: var(--transparent-popup-background);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border-radius: .5rem;
+}
+
+.theme_choice.active {
+  display: block;
+}
+
+.theme_choice > div {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  border-radius: .5rem;
+  padding: 0.5rem 0.5rem 0.5rem 3rem;
+}
+
+.theme_choice > div:hover {
+  background-color: var(--button-hover-highlight);
+}
+
+.theme_checked {
+  position: absolute;
+  left: 1rem;
+}
+
+.mobile_personal_info {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.mobile_personal_info > div:not(:first-of-type) {
+  padding: .3rem 1rem;
+  border-radius: .5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--header-text);
+  color: var(--header-background);
+}
+
+.mobile_personal_info > div span {
+  font-size: .8rem;
+}
+
+.mobile_navigation {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.mobile_navigation > div {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: .5rem;
+}
+
+.mobile_navigation > div:hover {
+  background-color: var(--button-hover-highlight);
+}
