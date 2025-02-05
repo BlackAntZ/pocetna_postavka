@@ -9,13 +9,12 @@ export const rute = [
 ]
 
 //primjer postavke ako koristimo side meni
-export const sideMeniPostavka = () => {
-  return [
+export const sideMeniPostavka =
+  [
     {
       //key nazivamo isto kao i rutu, da bi bio selektovan po refreshu
       key: '/',
       icon: <NavLink to={'/'}><HomeOutlined/></NavLink>,
       label: 'Početna',
     },
-  ];
-};
+  ];;

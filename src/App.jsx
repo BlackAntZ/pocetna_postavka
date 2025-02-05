@@ -5,7 +5,6 @@ import HomePage from "./pages/HomePage.jsx";
 import Root from "./pages/Root.jsx";
 import AboutPage from "./pages/AboutPage.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
-import Intro from "./components/Intro/Intro.jsx";
 import {sesijaTestna} from "./settings/pomocni_objekat.js";
 import {aplikacijaVerzija, buildFolder, environment} from "./settings/razvojno_okruzenje.js";
 import {useContext, useEffect, useState} from "react";
@@ -16,6 +15,7 @@ import classes from "./App.module.css";
 import {tema} from "./settings/ant.js";
 import srRS from 'antd/locale/sr_RS';
 import OsvjeziAplikaciju from "./components/Verzija/OsvjeziAplikaciju.jsx";
+import Intro from "./UI/Intro/Intro.jsx";
 
 //definisanje ruta
 const router = createBrowserRouter([

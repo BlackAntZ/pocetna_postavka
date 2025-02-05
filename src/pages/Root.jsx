@@ -1,11 +1,11 @@
-import Header from "../components/Header/Header.jsx";
 import {Outlet} from "react-router-dom";
-import SideMenu from "../components/Header/SideMenu.jsx";
 import classes from "./Root.module.css";
 import {useContext, useState} from "react";
 import {DeviceSessionContext} from "../store/device-session-context.jsx";
 import {SideMenuContext} from "../store/side-menu-context.js";
 import {navigation} from "../settings/header.js";
+import Header from "../UI/Header/Header.jsx";
+import SideMenu from "../UI/SideMenu/SideMenu.jsx";
 
 const Root = () => {
   const {deviceType} = useContext(DeviceSessionContext);

@@ -3,7 +3,7 @@ import classes from "../Header/Header.module.css";
 import {useLocation} from "react-router-dom";
 import {useContext} from "react";
 import {SideMenuContext} from "../../store/side-menu-context.jsx";
-import {sideMeniPostavka} from "../../podesavanja/rute.jsx";
+import {sideMeniPostavka} from "../../settings/rute.jsx";
 
 const SideMenu = () => {
   const location = useLocation();

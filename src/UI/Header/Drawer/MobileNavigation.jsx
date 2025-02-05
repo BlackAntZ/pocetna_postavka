@@ -1,6 +1,6 @@
 import classes from "./ProfileDrawer.module.css";
 import {Divider} from "antd";
-import {rute} from "../../../podesavanja/rute.jsx";
+import {rute} from "../../../settings/rute.jsx";
 
 const MobileNavigation = () => {
   return (
