@@ -4,11 +4,13 @@ import {Tooltip} from "antd";
 import {useContext} from "react";
 import {DeviceSessionContext} from "../../store/device-session-context.jsx";
 import PropTypes from "prop-types";
-import {navigation, odabirKlinike, odabirOdjela, pocetnaStranicaUrl} from "../../podesavanja/header.js";
+import {navigation, odabirKlinike, odabirOdjela, pocetnaStranicaUrl} from "../../settings/header.js";
 
 const UserQuit = ({setOtvoriProfil}) => {
   const {deviceType, session} = useContext(DeviceSessionContext);
   const mobile = deviceType === 'mobile' || deviceType === "tablet";
+
+  const url = window.location.origin;
 
   return (
     <>
@@ -38,7 +40,7 @@ const UserQuit = ({setOtvoriProfil}) => {
             </div>
           </Tooltip> : null}
 
-          <LogoutOutlined onClick={() => window.location = pocetnaStranicaUrl} className={classes.logout}/>
+          <LogoutOutlined onClick={() => window.location = pocetnaStranicaUrl(url)} className={classes.logout}/>
         </div>}
     </>
   );

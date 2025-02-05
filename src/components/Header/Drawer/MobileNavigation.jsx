@@ -1,6 +1,6 @@
-import {rute} from "../../../util/konstante.jsx";
 import classes from "./ProfileDrawer.module.css";
 import {Divider} from "antd";
+import {rute} from "../../../settings/rute.jsx";
 
 const MobileNavigation = () => {
   return (

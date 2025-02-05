@@ -2,7 +2,7 @@ import classes from "./ProfileDrawer.module.css";
 import {Divider} from "antd";
 import {useContext} from "react";
 import {DeviceSessionContext} from "../../../store/device-session-context.jsx";
-import {modul} from "../../../podesavanja/header.js";
+import {modul} from "../../../settings/header.js";
 
 const MobileDrawerProfile = () => {
   const {deviceType, session} = useContext(DeviceSessionContext);

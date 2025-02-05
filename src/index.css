@@ -4,6 +4,18 @@
   url("./fonts/MyriadPro-BlackIt.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "Myriad Pro Bold";
+  src: local("Myriad Pro Bold"),
+  url("./fonts/MyriadPro-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "Myriad Pro SemiBold";
+  src: local("Myriad Pro SemiBold"),
+  url("./fonts/MyriadPro-Semibold.otf") format("opentype");
+}
+
 html {
   --body-background: #fff;
 
@@ -88,4 +100,26 @@ body {
 
 .ant-menu-item-icon {
   transition: none !important;
+}
+
+.ant-drawer-body {
+  background-color: var(--header-background);
+}
+
+.ant-spin-fullscreen {
+  z-index: 8888;
+}
+
+.ant-badge {
+  color: unset;
+}
+
+.special .ant-select-selector {
+  background: #ffffff !important;
+}
+
+.special-tabs,
+.special-tabs .ant-tabs-content,
+.special-tabs .ant-tabs-content > div {
+  height: 100%;
 }

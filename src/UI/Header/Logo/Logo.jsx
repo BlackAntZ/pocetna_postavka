@@ -2,8 +2,8 @@ import classes from "./Logo.module.css";
 import {useContext} from "react";
 import {DeviceSessionContext} from "../../../store/device-session-context.jsx";
 import {useNavigate} from "react-router-dom";
-import {navigation} from "../../../podesavanja/header.js";
-import {SideMenuContext} from "../../../store/side-menu-context.jsx";
+import {SideMenuContext} from "../../../store/side-menu-context.js";
+import {navigation} from "../../../settings/header.js";
 
 const Logo = () => {
   const {deviceType} = useContext(DeviceSessionContext);

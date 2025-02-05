@@ -1,9 +1,10 @@
 import {ConfigProvider, Menu} from "antd";
 import classes from "./Header.module.css";
-import {sideMeniPostavka, tema} from "../../util/konstante.jsx";
 import {useLocation} from "react-router-dom";
 import {useContext} from "react";
 import {SideMenuContext} from "../../store/side-menu-context.js";
+import {tema} from "../../settings/ant.js";
+import {sideMeniPostavka} from "../../settings/rute.jsx";
 
 const SideMenu = () => {
   const location = useLocation();
@@ -18,7 +19,7 @@ const SideMenu = () => {
           mode="inline"
           theme="light"
           inlineCollapsed={!mini}
-          items={sideMeniPostavka}
+          items={sideMeniPostavka()}
           rootClassName={classes.side_menu}
         />
       </ConfigProvider>

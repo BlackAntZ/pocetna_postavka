@@ -5,7 +5,7 @@ import {DeviceSessionContext} from "../../store/device-session-context.jsx";
 import LogoOrg from "./Logo&Org.jsx";
 import NavigationLinks from "./NavigationLinks.jsx";
 import UserQuit from "./User&Quit.jsx";
-import {navigation} from "../../podesavanja/header.js";
+import {navigation} from "../../settings/header.js";
 
 const Header = () => {
   const [otvoriProfil, setOtvoriProfil] = useState(false);
