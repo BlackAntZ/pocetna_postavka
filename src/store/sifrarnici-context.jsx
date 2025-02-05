@@ -15,7 +15,7 @@ export const SifrarniciContextProvider = (props) => {
   useEffect(() => {
     setLoading(true);
     (async () => {
-      // await postaviSifrarnik('Drzave', setDrzave);
+      await postaviSifrarnik('Drzave', setDrzave);
 
       setLoading(false);
     })();

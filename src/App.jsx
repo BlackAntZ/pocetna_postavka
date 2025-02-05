@@ -47,6 +47,7 @@ function App() {
     }
   }, []);
 
+  //provjera verzije
   useEffect(() => {
     if (environment === 'production') {
       (async () => {

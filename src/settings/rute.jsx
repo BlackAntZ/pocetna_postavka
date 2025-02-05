@@ -1,5 +1,5 @@
 import {NavLink} from "react-router-dom";
-import {ContactsOutlined, HomeOutlined, InfoCircleOutlined} from "@ant-design/icons";
+import {ClusterOutlined, ContactsOutlined, HomeOutlined, InfoCircleOutlined} from "@ant-design/icons";
 
 //ako koristimo top navigaciju - za manje module
 export const rute = [
@@ -17,4 +17,23 @@ export const sideMeniPostavka =
       icon: <NavLink to={'/'}><HomeOutlined/></NavLink>,
       label: 'Početna',
     },
-  ];;
+    {
+      key: 'sub1',
+      label: 'Šifrarnici',
+      icon: <ClusterOutlined />,
+      children: [
+        {
+          key: '/grupe',
+          label: <NavLink to={'/grupe'}>Grupe</NavLink>
+        },
+        {
+          key: '/regije',
+          label: <NavLink to={'/regije'}>Regije</NavLink>
+        },
+        {
+          key: '/pretrage',
+          label: <NavLink to={'/pretrage'}>Pretrage</NavLink>
+        }
+      ],
+    }
+  ];
