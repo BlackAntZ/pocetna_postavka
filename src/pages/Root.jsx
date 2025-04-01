@@ -2,7 +2,7 @@ import {Outlet} from "react-router-dom";
 import classes from "./Root.module.css";
 import {useContext, useState} from "react";
 import {DeviceSessionContext} from "../store/device-session-context.jsx";
-import {SideMenuContext} from "../store/side-menu-context.js";
+import {SideMenuContext} from "../store/side-menu-context.jsx";
 import {navigation} from "../settings/header.js";
 import Header from "../UI/Header/Header.jsx";
 import SideMenu from "../UI/SideMenu/SideMenu.jsx";
