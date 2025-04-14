@@ -6,6 +6,9 @@ import {SideMenuContext} from "../store/side-menu-context.jsx";
 import {navigation} from "../settings/header.js";
 import Header from "../UI/Header/Header.jsx";
 import SideMenu from "../UI/SideMenu/SideMenu.jsx";
+import {tema} from "../settings/ant.js";
+import srRS from 'antd/locale/sr_RS';
+import {ConfigProvider} from "antd";
 
 const Root = () => {
   const {deviceType} = useContext(DeviceSessionContext);
@@ -16,9 +19,11 @@ const Root = () => {
   return (
     <>
       <SideMenuContext.Provider value={{mini: rasiriSide, postaviMini: setRasiriSide}}>
-        <Header/>
+        <ConfigProvider theme={tema} locale={srRS}>
+          <Header/>
 
-        {!mobile && navigation === 'side' ? <SideMenu/> : null}
+          {!mobile && navigation === 'side' ? <SideMenu/> : null}
+        </ConfigProvider>
       </SideMenuContext.Provider>
 
       <div className={`${!mobile && navigation === 'side' ? classes.root : ''}`}>

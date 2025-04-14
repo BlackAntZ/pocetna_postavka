@@ -10,20 +10,20 @@ import {aplikacijaVerzija, buildFolder, environment} from "./settings/razvojno_o
 import {useContext, useEffect, useState} from "react";
 import {povuciSesiju, povuciVerziju} from "./settings/pomocne_funkcije.js";
 import {SifrarniciContext} from "./store/sifrarnici-context.jsx";
-import {ConfigProvider, Spin} from "antd";
+import {Spin} from "antd";
 import classes from "./App.module.css";
-import {tema} from "./settings/ant.js";
-import srRS from 'antd/locale/sr_RS';
 import OsvjeziAplikaciju from "./components/Verzija/OsvjeziAplikaciju.jsx";
 import Intro from "./UI/Intro/Intro.jsx";
 
 //definisanje ruta
 const router = createBrowserRouter([
-  {path: "/", element: <Root />, children: [
-    {index: true, element: <HomePage />},
-    {path: 'about', element: <AboutPage />},
-    {path: 'contact', element: <ContactPage />},
-    ]},
+  {
+    path: "/", element: <Root/>, children: [
+      {index: true, element: <HomePage/>},
+      {path: 'about', element: <AboutPage/>},
+      {path: 'contact', element: <ContactPage/>},
+    ]
+  },
 ], {basename: environment === 'test' ? undefined : buildFolder})
 
 function App() {
@@ -60,16 +60,14 @@ function App() {
 
   return (
     <DeviceSessionContext.Provider value={{deviceType: deviceType, session: sesijaPodaci}}>
-      <Intro />
+      <Intro/>
 
       <Spin fullscreen spinning={loading} className={classes.spinner}/>
 
-      <ConfigProvider theme={tema} locale={srRS}>
 
-        <OsvjeziAplikaciju closeModal={() => setOsvjeziAplikaciju(false)} open={osvjeziAplikaciju} />
+      <OsvjeziAplikaciju closeModal={() => setOsvjeziAplikaciju(false)} open={osvjeziAplikaciju}/>
 
-        <RouterProvider router={router}/>
-      </ConfigProvider>
+      <RouterProvider router={router}/>
     </DeviceSessionContext.Provider>
   )
 }
