@@ -1,11 +1,14 @@
 import classes from "./Header.module.css";
 import Logo from "./Logo/Logo.jsx";
 import {useContext} from "react";
-import {DeviceSessionContext} from "../../store/device-session-context.jsx";
-import {modul} from "../../settings/header.js";
+import {DeviceContext} from "../../store/device-context.jsx";
+import {module} from "../../settings/header.js";
+import {LoginContext} from "../../store/login-context.jsx";
 
 const LogoOrg = () => {
-  const {deviceType, session} = useContext(DeviceSessionContext);
+  const {deviceType} = useContext(DeviceContext);
+  const {session} = useContext(LoginContext);
+
   const mobile = deviceType === 'mobile' || deviceType === 'tablet';
 
   return (
@@ -16,7 +19,7 @@ const LogoOrg = () => {
             KIS :: {session.naziv_klijenta}
           </span>
           <span>
-            {modul}
+            {module}
           </span>
       </div> : null}
     </div>

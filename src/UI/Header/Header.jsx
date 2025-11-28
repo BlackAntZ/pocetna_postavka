@@ -1,16 +1,16 @@
 import {useContext, useState} from 'react';
 import classes from "./Header.module.css";
 import ProfileDrawer from "./Drawer/ProfileDrawer.jsx";
-import {DeviceSessionContext} from "../../store/device-session-context.jsx";
+import {DeviceContext} from "../../store/device-context.jsx";
 import LogoOrg from "./Logo&Org.jsx";
 import NavigationLinks from "./NavigationLinks.jsx";
 import UserQuit from "./User&Quit.jsx";
 import {navigation} from "../../settings/header.js";
 
 const Header = () => {
-  const [otvoriProfil, setOtvoriProfil] = useState(false);
+  const [openProfile, setOpenProfile] = useState(false);
 
-  const {deviceType} = useContext(DeviceSessionContext);
+  const {deviceType} = useContext(DeviceContext);
   const mobile = deviceType === 'mobile';
   const tablet = deviceType === 'tablet';
 
@@ -20,9 +20,9 @@ const Header = () => {
 
       {navigation === 'top' && !mobile ? <NavigationLinks/> : null}
 
-      <UserQuit setOtvoriProfil={setOtvoriProfil} />
+      <UserQuit setOtvoriProfil={setOpenProfile} />
 
-      <ProfileDrawer open={otvoriProfil} onClose={() => setOtvoriProfil(false)}/>
+      <ProfileDrawer open={openProfile} onClose={() => setOpenProfile(false)}/>
     </header>
   );
 };

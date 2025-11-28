@@ -1,9 +1,9 @@
 import {useContext, useEffect} from 'react';
 import classes from "./Intro.module.css";
-import {DeviceSessionContext} from "../../store/device-session-context.jsx";
+import {DeviceContext} from "../../store/device-context.jsx";
 
 const Intro = () => {
-  const {deviceType} = useContext(DeviceSessionContext);
+  const {deviceType} = useContext(DeviceContext);
   const mobile = deviceType === "mobile" || deviceType === "tablet";
 
   useEffect(() => {

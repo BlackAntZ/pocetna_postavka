@@ -2,14 +2,14 @@ import {NavLink} from "react-router-dom";
 import {ClusterOutlined, ContactsOutlined, HomeOutlined, InfoCircleOutlined} from "@ant-design/icons";
 
 //ako koristimo top navigaciju - za manje module
-export const rute = [
+export const routes = [
   {id: '/', lokacija: '/', tekst: 'Početna', icon: <HomeOutlined/>},
   {id: '/about', lokacija: '/about', tekst: 'O nama', icon: <InfoCircleOutlined/>},
   {id: '/contact', lokacija: '/contact', tekst: 'Kontakt', icon: <ContactsOutlined/>}
 ]
 
 //primjer postavke ako koristimo side meni
-export const sideMeniPostavka =
+export const sideMenuSettings =
   [
     {
       //key nazivamo isto kao i rutu, da bi bio selektovan po refreshu

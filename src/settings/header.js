@@ -1,10 +1,11 @@
-export const modul = 'Kliničke studije';
+export const module = 'Kliničke studije';
 
 //side || top
 export const navigation = 'side';
 
-export const odabirKlinike = false;
-export const odabirOdjela = false;
+export const showSelectClinic = false;
+export const showSelectDepartment = false;
 
 //lokacija na koju se vracamo kad izlazimo iz aplikacije
-export const pocetnaStranicaUrl = url => `${url}/kis/hello.cfm`;
+export const returnToHomepage = () => window.location = `${window.location.origin}/kis/hello.cfm`
+;

@@ -3,7 +3,7 @@ import classes from "../Header/Header.module.css";
 import {useLocation} from "react-router-dom";
 import {useContext} from "react";
 import {SideMenuContext} from "../../store/side-menu-context.jsx";
-import {sideMeniPostavka} from "../../settings/rute.jsx";
+import {sideMenuSettings} from "../../routes/routes.jsx";
 
 const SideMenu = () => {
   const location = useLocation();
@@ -17,7 +17,7 @@ const SideMenu = () => {
         mode="inline"
         theme="light"
         inlineCollapsed={!mini}
-        items={sideMeniPostavka}
+        items={sideMenuSettings}
         rootClassName={classes.side_menu}
       />
     </div>

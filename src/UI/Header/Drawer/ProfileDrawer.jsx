@@ -3,16 +3,16 @@ import classes from "./ProfileDrawer.module.css";
 import {CloseCircleOutlined} from '@ant-design/icons';
 import PropTypes from "prop-types";
 import MobileDrawerProfile from "./MobileDrawerProfile.jsx";
-import OdabirTeme from "./OdabirTeme.jsx";
+import ThemeSelection from "./ThemeSelection.jsx";
 import {useContext} from "react";
-import {DeviceSessionContext} from "../../../store/device-session-context.jsx";
+import {DeviceContext} from "../../../store/device-context.jsx";
 import MobileNavigation from "./MobileNavigation.jsx";
-import {tema} from "../../../settings/ant.js";
+import {LoginContext} from "../../../store/login-context.jsx";
 
 const ProfileDrawer = ({open, onClose}) => {
-  const {session} = useContext(DeviceSessionContext);
+  const {session} = useContext(LoginContext);
+  const {deviceType} = useContext(DeviceContext);
 
-  const {deviceType} = useContext(DeviceSessionContext);
   const mobile = deviceType === "mobile" || deviceType === "tablet";
 
   const title = <div>
@@ -23,7 +23,7 @@ const ProfileDrawer = ({open, onClose}) => {
   </div>
 
   return (
-    <Drawer width={500} onClose={onClose} open={open} closable={false}>
+    <Drawer size={500} onClose={onClose} open={open} closable={false}>
       <div className={classes.content}>
 
         <div className={classes.title}>
@@ -35,7 +35,7 @@ const ProfileDrawer = ({open, onClose}) => {
 
         {mobile ? <MobileNavigation/> : null}
 
-        <OdabirTeme drawerOpen={open}/>
+        <ThemeSelection drawerOpen={open}/>
 
         <MobileDrawerProfile/>
 

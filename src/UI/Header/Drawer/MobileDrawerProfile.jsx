@@ -1,11 +1,14 @@
 import classes from "./ProfileDrawer.module.css";
 import {Divider} from "antd";
 import {useContext} from "react";
-import {DeviceSessionContext} from "../../../store/device-session-context.jsx";
-import {modul} from "../../../settings/header.js";
+import {DeviceContext} from "../../../store/device-context.jsx";
+import {module} from "../../../settings/header.js";
+import {LoginContext} from "../../../store/login-context.jsx";
 
 const MobileDrawerProfile = () => {
-  const {deviceType, session} = useContext(DeviceSessionContext);
+  const {deviceType} = useContext(DeviceContext);
+  const {session} = useContext(LoginContext);
+
   const mobile = deviceType === "mobile" || deviceType === 'tablet';
 
   return (
@@ -27,7 +30,7 @@ const MobileDrawerProfile = () => {
             <span>
               Modul:
             </span>
-            {modul}
+            {module}
           </div>
           <div>
             <span>

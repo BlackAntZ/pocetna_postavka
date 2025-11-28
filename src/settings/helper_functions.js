@@ -1,4 +1,4 @@
-import {environment, productionUrl, testUrl} from "./razvojno_okruzenje.js";
+import {backendUrl} from "./dev_env.js";
 import dayjs from "dayjs";
 
 export const formatDatum = 'DD.MM.YYYY';
@@ -48,7 +48,7 @@ export const napraviBodyZaSlanje = podaci => {
 }
 
 export const povuciPodatke = async (method) => {
-  const response = await fetch(`${environment === 'test' ? testUrl : productionUrl}${method}`);
+  const response = await fetch(`${backendUrl}${method}`);
 
   return await response.json();
 }
@@ -69,7 +69,7 @@ export const povuciVerziju = async () => {
 
 export const posaljiPodatke = async (method, podaci) => {
   const data = napraviBodyZaSlanje(podaci);
-  const responose = await fetch(`${environment === 'test' ? testUrl : productionUrl}${method}`, {
+  const responose = await fetch(`${backendUrl}${method}`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/x-www-form-urlencoded'

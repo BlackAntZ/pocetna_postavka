@@ -4,14 +4,14 @@ import {useState} from "react";
 import useComponentVisible from "./useComponentVisible.jsx";
 import PropTypes from "prop-types";
 
-const OdabirTeme = ({drawerOpen}) => {
+const ThemeSelection = ({drawerOpen}) => {
   const { ref, isComponentVisible, setIsComponentVisible } =
     useComponentVisible(drawerOpen);
-  const [tema, setTema] = useState(document.querySelector('body').getAttribute('data-theme') || 'light');
+  const [theme, setTheme] = useState(document.querySelector('body').getAttribute('data-theme') || 'light');
 
-  const podesiTemu = tema => {
-    setTema(tema);
-    document.querySelector('body').setAttribute('data-theme', tema);
+  const setThemeHandler = val => {
+    setTheme(val);
+    document.querySelector('body').setAttribute('data-theme', val);
     setIsComponentVisible(false);
   }
 
@@ -19,19 +19,19 @@ const OdabirTeme = ({drawerOpen}) => {
     <div ref={ref} className={classes.theme_container} id={'odabir_teme'}>
       <div className={classes.theme} onClick={() => setIsComponentVisible(prevState => !prevState)}>
         <div>
-          {tema === 'dark' ? <MoonFilled/> : <SunFilled/>}
-          Tema: {tema === 'light' ? 'Svijetla' : tema === 'dark' ? 'Tamna' : 'Svijetla 2'}
+          {theme === 'dark' ? <MoonFilled/> : <SunFilled/>}
+          Tema: {theme === 'light' ? 'Svijetla' : theme === 'dark' ? 'Tamna' : 'Svijetla 2'}
         </div>
         <RightOutlined/>
       </div>
         <div ref={ref} className={`${classes.theme_choice} ${isComponentVisible ? classes.active : ''}`}>
-        <div onClick={() => podesiTemu('light')}>{tema === 'light' ?
+        <div onClick={() => setThemeHandler('light')}>{theme === 'light' ?
           <CheckOutlined className={classes.theme_checked}/> : null}Svijetla 1
         </div>
-        <div onClick={() => podesiTemu('light_alt')}>{tema === 'light_alt' ?
+        <div onClick={() => setThemeHandler('light_alt')}>{theme === 'light_alt' ?
           <CheckOutlined className={classes.theme_checked}/> : null}Svijetla 2
         </div>
-        <div onClick={() => podesiTemu('dark')}>{tema === 'dark' ?
+        <div onClick={() => setThemeHandler('dark')}>{theme === 'dark' ?
           <CheckOutlined className={classes.theme_checked}/> : null}Tamna
         </div>
       </div>
@@ -39,8 +39,8 @@ const OdabirTeme = ({drawerOpen}) => {
   );
 };
 
-OdabirTeme.propTypes = {
+ThemeSelection.propTypes = {
   drawerOpen: PropTypes.bool.isRequired,
 }
 
-export default OdabirTeme;
+export default ThemeSelection;

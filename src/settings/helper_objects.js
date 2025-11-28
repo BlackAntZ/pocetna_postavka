@@ -1,4 +1,4 @@
-export const sesijaTestna = {
+export const testSession = {
   cfid: "69050",
   cftoken: "E3C30397-3764-4DD2-A65264D21C7A3F6B",
   urltoken: "CFID=69050&CFTOKEN=E3C30397-3764-4DD2-A65264D21C7A3F6B",
@@ -46,7 +46,7 @@ export const sesijaTestna = {
 }
 
 // eslint-disable-next-line no-unused-vars
-const pomocni_objekat = {
+const helper_keys = {
   greska: '',
   lista: '',
   verzija: ''
